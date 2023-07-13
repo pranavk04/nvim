@@ -21,7 +21,6 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 
 " colorscheme
-Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " lsps!
@@ -54,7 +53,7 @@ Plug 'williamboman/mason-lspconfig.nvim'
 
 " cool error handling 
 Plug 'MunifTanjim/nui.nvim'
-Plug 'rcarriga/nvim-notify'
+" Plug 'rcarriga/nvim-notify'
 Plug 'folke/noice.nvim'
 
 " pretty 
@@ -66,17 +65,13 @@ Plug 'folke/trouble.nvim'
 " op syntax highlighting plus rainbows!!!
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow' " need to configure this using treesitter, it's a module
+Plug 'RRethy/nvim-treesitter-textsubjects'
 
 " which keybind does what: amazing
 Plug 'folke/which-key.nvim'
 
 " markdown preview
 Plug 'ellisonleao/glow.nvim'
-
-" org mode for vim and not e****
-Plug 'nvim-orgmode/orgmode'
-Plug 'akinsho/org-bullets.nvim'
-Plug 'lukas-reineke/headlines.nvim'
 
 " persistent terminal sessions 
 Plug 'akinsho/toggleterm.nvim'
@@ -93,7 +88,7 @@ Plug 'akinsho/bufferline.nvim'
 " lua powered statusline!
 Plug 'nvim-lualine/lualine.nvim'
 
-" evilll bad horrifying but i liked the opening page of e**** ngl
+" evilll bad horrifying but i liked the opening page of doom e**** ngl
 Plug 'goolord/alpha-nvim'
 
 " filetree viewer
@@ -108,4 +103,20 @@ Plug 'anuvyklack/pretty-fold.nvim'
 " easily jumping windows 
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 
+" clip manager 
+Plug 'kkharji/sqlite.lua'
+Plug 'AckslD/nvim-neoclip.lua'
+
+" 善
+Plug 'Pocco81/true-zen.nvim'
+Plug 'folke/twilight.nvim'
+
+" smooth scrolling 
+Plug 'karb94/neoscroll.nvim'
+
+" surround selections
+Plug 'kylechui/nvim-surround'
+
+" git spam 
+Plug 'kdheepak/lazygit.nvim'
 call plug#end()

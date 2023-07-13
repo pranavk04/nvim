@@ -1,32 +1,28 @@
-local trouble = require('trouble')
-local actions = require('trouble.providers.telescope')
-local treesitter = require('nvim-treesitter.configs')
+local actions = require('telescope.actions')
+local trouble = require('trouble.providers.telescope')
 local telescope = require('telescope')
-local tsc = require('nvim-treesitter.configs')
-local bufferline = require('bufferline')
-local lualine = require('lualine')
-local autopairs = require('nvim-autopairs')
-local blankline = require('indent_blankline')
-local toggleterm = require('toggleterm')
-local orgmode = require('orgmode')
-local noice = require('noice')
-local alpha = require('alpha')
-local tree = require('nvim-tree')
-local comment = require('Comment')
--- local whichkey = require('which-key')
 
-treesitter.setup({
+require("catppuccin").setup({
+	flavour = "frappe"
+})
+
+vim.cmd.colorscheme("catppuccin")
+
+require('nvim-treesitter.configs').setup({
 	ensure_installed = "all",
-
 	highlight = {
 		enable = true, 
 		disable = { "tex", "latex" },
 	},
+	rainbow = {
+		enable = true,
+		extended_mode = true,
+	}
 })
 
 telescope.setup {}
 
-trouble.setup {
+require('trouble').setup {
 	defaults = {
 		mappings = {
 			i = { ["<c-t>"] = trouble.open_with_trouble }, 
@@ -35,60 +31,63 @@ trouble.setup {
 	},
 }
 
-alpha.setup(require('alpha.themes.dashboard').config)
+require('alpha').setup(require('alpha.themes.dashboard').config)
 
-noice.setup {}
+require('noice').setup {}
 
 vim.opt.termguicolors = true
-tree.setup {}
 
+require('Comment').setup {}
 
-comment.setup {}
+vim.o.timeout = true
+vim.o.timeoutlen = 300
+require('which-key').setup {}
 
---vim.o.timeout = true
---vim.o.timeoutlen = 300
--- whichkey.setup {}
+require('bufferline').setup {}
 
-tsc.setup {
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
-	rainbow = {
-		enable = true,
-		extended_mode = true,
-	}
-}
-
-bufferline.setup {}
-
-lualine.setup {
+require('lualine').setup {
 	options = {
-		theme = 'auto', 
+		theme = 'catppuccin'
 	}
 }
 
-autopairs.setup {}
+require('nvim-autopairs').setup {}
 
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
 vim.opt.listchars:append "eol:↴"
 
-blankline.setup {
+require('indent_blankline').setup {
   space_char_blankline = " ",
   show_current_context = true,
 	show_current_context_start = true,
 }
 
-toggleterm.setup {}
-
-orgmode.setup {}
-orgmode.setup_ts_grammar()
-
-require('org-bullets').setup() -- sub plugins
-require('headlines').setup()
+require('toggleterm').setup {}
 
 require('pretty-fold').setup {}
 require('pretty-fold.preview').setup {}
 
 require('nvim-window').setup({})
+
+require('neoclip').setup()
+
+require('nvim-tree').setup() 
+
+require('true-zen').setup {}
+
+require('twilight').setup {}
+
+require('nvim-treesitter.configs').setup {
+	textsubjects = {
+			enable = true,
+			prev_selection = ',', 
+			keymaps = {
+					['.'] = 'textsubjects-smart',
+					[';'] = 'textsubjects-container-outer',
+					['i;'] = 'textsubjects-container-inner',
+			},
+	},
+}
+
+require('neoscroll').setup {}

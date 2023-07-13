@@ -1,14 +1,10 @@
 -- importing lsp related modules
 local lsp = require('lspconfig')
-local mason = require('mason')
-local mason_lsp = require('mason-lspconfig')
-local null_ls = require('null-ls')
 local cmp = require('cmp')
+local null_ls = require('null-ls')
 
-mason.setup {}
-mason_lsp.setup {}
-
-
+require('mason').setup {}
+require('mason-lspconfig').setup {}
 
 cmp.setup({
     snippet = {
@@ -33,7 +29,7 @@ cmp.setup({
 
 -- initializes all of the language servers
 --
-local on_attack = function(client, bufnr)
+local on_attach = function(client, bufnr)
     -- this is for manual completion, not sure if needed
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -44,6 +40,7 @@ local on_attack = function(client, bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 lsp['tsserver'].setup {
     capabilities = capabilities, 
     on_attach = on_attach,

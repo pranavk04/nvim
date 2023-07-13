@@ -30,15 +30,13 @@ set t_Co=256
 
 " kitty stuff
 runtime ./kitty.vim
+
 " initialize packages
 runtime ./plug.vim
 lua require('plug')
 
 " initialize language servers
 lua require('lsp')
-
-" colorscheme
-colorscheme catppuccin
 
 " keybinds
 
@@ -50,7 +48,6 @@ nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
-
 " vimtex 
 filetype plugin indent on
 let g:vimtex_view_method = 'open -a Skim'
@@ -61,7 +58,8 @@ nnoremap <leader>p :Glow<cr>
 let g:dashboard_default_executive = 'telescope'
 
 "filetree 
-nnoremap <leader>f <cmd>NvimTreeToggle<cr>
+nnoremap <leader>ff <cmd>NvimTreeToggle<cr>
+nnoremap <leader>fs <cmd>NvimTreeFindFile<cr>
 
 " comments
 vmap gc <Plug>ToggleCommaround
@@ -72,3 +70,15 @@ map <silent> <leader>w :lua require('nvim-window').pick()<cr>
 " bufferline 
 nnoremap <silent>[b :BufferLineCycleNext<cr>
 nnoremap <silent>b] :BufferLineCyclePrev<cr>
+
+"zen
+nnoremap <leader>zn <cmd>TZNarrow<cr>
+nnoremap <leader>zf <cmd>TZFocus<cr>
+nnoremap <leader>zm <cmd>TZMinimalist<cr>
+nnoremap <leader>za <cmd>TZAtaraxis<cr>
+
+" git
+nnoremap <leader>gg <cmd>LazyGit<cr>
+
+"terminal 
+nnoremap <leader>tt <cmd>ToggleTerm<cr>
