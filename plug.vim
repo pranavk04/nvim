@@ -82,8 +82,9 @@ Plug 'nvim-telescope/telescope.nvim'
 " iconsssss (this is the nvim fork)
 Plug 'kyazdani42/nvim-web-devicons'
 
-" cool tabs? bufferline >:)
-Plug 'akinsho/bufferline.nvim'
+" cool tabs
+" Plug 'akinsho/bufferline.nvim'
+Plug 'nanozuki/tabby.nvim'
 
 " lua powered statusline!
 Plug 'nvim-lualine/lualine.nvim'
@@ -119,4 +120,9 @@ Plug 'kylechui/nvim-surround'
 
 " git spam 
 Plug 'kdheepak/lazygit.nvim'
+
+" better prose support 
+Plug 'preservim/vim-pencil'
+
+" Tablines
 call plug#end()
