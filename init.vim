@@ -10,7 +10,6 @@ set rnu
 syntax on
 set shellslash
 set ignorecase 
-inoremap jj <esc>
 let mapleader = " "
 
 " lsp windows
@@ -24,7 +23,6 @@ set shiftwidth=2
 set smarttab
 set ai 
 set si
-
 " color!
 set t_Co=256
 
@@ -50,7 +48,8 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
 " vimtex 
 filetype plugin indent on
-let g:vimtex_view_method = 'open -a Skim'
+let g:vimtex_view_method = 'Skim'
+
 " glow
 nnoremap <leader>p :Glow<cr>
 
@@ -81,4 +80,7 @@ nnoremap <leader>za <cmd>TZAtaraxis<cr>
 nnoremap <leader>gg <cmd>LazyGit<cr>
 
 "terminal 
-nnoremap <leader>tt <cmd>ToggleTerm<cr>
+nnoremap <leader>tt <cmd>ToggleTerm direction=horizontal<cr>
+nnoremap <leader>tv <cmd>ToggleTerm direction=vertical size=70<cr>
+
+set textwidth=100

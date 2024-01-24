@@ -84,7 +84,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " cool tabs
 " Plug 'akinsho/bufferline.nvim'
-Plug 'nanozuki/tabby.nvim'
 
 " lua powered statusline!
 Plug 'nvim-lualine/lualine.nvim'
@@ -98,8 +97,6 @@ Plug 'nvim-tree/nvim-tree.lua'
 " commenter because yes
 Plug 'numToStr/Comment.nvim'
 
-" easy code folding!
-Plug 'anuvyklack/pretty-fold.nvim'
 
 " easily jumping windows 
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
@@ -124,5 +121,4 @@ Plug 'kdheepak/lazygit.nvim'
 " better prose support 
 Plug 'preservim/vim-pencil'
 
-" Tablines
 call plug#end()
